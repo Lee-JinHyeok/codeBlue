@@ -13,12 +13,12 @@ import com.example.codeblue.service.BoardService;
 public class BoardController {
 	@Autowired BoardService boardService;
 	// 코드블루 소개 패이지
-	@GetMapping("index")
+	@GetMapping("main")
 	public String getIndex(HttpSession session) {
-		return "/index";
+		return "/main";
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/codeblue")
 	public String getHome(HttpSession session) {
 		System.out.println("::: get - codeBlue home :::");
 		System.out.println(session.getAttribute("loginUser"));
@@ -28,6 +28,6 @@ public class BoardController {
 			}
 			return "/codeblue/today";
 		}
-		return "/index";
+		return "/main";
 	}
 }
